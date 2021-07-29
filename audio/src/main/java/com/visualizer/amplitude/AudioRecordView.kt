@@ -209,11 +209,18 @@ class AudioRecordView @JvmOverloads constructor(
     private fun drawAlignCenter(canvas: Canvas) {
         val verticalCenter = height / 2
         for (i in 0 until chunkHeights.size - 1) {
-            val chunkX = getChunkX(i)
+            val chunkX = getChunkX(chunkHeights.size-1 -i)
             val startY = verticalCenter - chunkHeights[i] / 2
             val stopY = verticalCenter + chunkHeights[i] / 2
 
-            canvas.drawLine(chunkX, startY, chunkX, stopY, chunkPaint)
+//            if(i<20) {
+//                chunkPaint.color = Color.RED
+//                canvas.drawLine(chunkX, startY, chunkX, stopY, chunkPaint)
+//            }
+//            else {
+//                chunkPaint.color = Color.GREEN
+                canvas.drawLine(chunkX, startY, chunkX, stopY, chunkPaint)
+//            }
         }
     }
 
